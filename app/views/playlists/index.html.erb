@@ -1,0 +1,29 @@
+<h1>Listing djs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artist name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playlists.each do |dj| %>
+      <tr>
+        <td><%= dj.artist %></td>
+        <td><%= link_to 'Show', dj %></td>
+        <td><%= link_to 'Edit', edit_playlist_path(dj) %></td>
+        <td><%= link_to 'Destroy', dj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Playlist', new_playlist_path %>
+
+<%= link_to 'Home', root_path %>
